@@ -6,7 +6,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     // Add default image for bakcroundImage to catcherror
     .catch(err => {
-        // Use a default background image/author
+
         document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1560008511-11c63416e52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDIxMTc&ixlib=rb-1.2.1&q=80&w=1080)`
 		document.getElementById("author").textContent = `By: Dodi Achmad`
     })
@@ -19,6 +19,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         }
         return res.json()
     })
+    // display data in the HTML
     .then(data => {
         document.getElementById("crypto-top").innerHTML = `
             <img src=${data.image.small} />
@@ -33,10 +34,10 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     // Add function for current time with new date
 function getCurrentTime() {
     const date = new Date()
-    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "full"})
+    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "long"})
 }
 // Add callback function to setinterval for currentTime
-setInterval(getCurrentTime, 1000)
+setInterval(getCurrentTime, 5000)
 
 // Add currentPosition data
 navigator.geolocation.getCurrentPosition(position => {
