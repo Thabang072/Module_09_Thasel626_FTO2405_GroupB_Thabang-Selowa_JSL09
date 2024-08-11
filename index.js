@@ -35,3 +35,5 @@ function getCurrentTime() {
     const date = new Date()
     document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "full"})
 }
+// Add callback function to setinterval for currentTime
+setInterval(getCurrentTime, 1000)
